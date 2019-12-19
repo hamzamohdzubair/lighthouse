@@ -263,6 +263,10 @@
 
 <body>
   
+<div id="logo" style="position: fixed; top: 20px; left: 20px; z-index: 1">
+    <img src="https://i.imgur.com/Xpd2e0z.jpg" />
+</div>
+
 
   <div class="reveal">
 
@@ -286,23 +290,16 @@
     
         <section >
             
-            <h2><a id="user-content-nlp-is-important" class="anchor" href="#nlp-is-important" aria-hidden="true"></a>NLP is important</h2>
-
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <h2><a id="user-content-units" class="anchor" href="#units" aria-hidden="true"></a>Units</h2>
+            <h2><a id="user-content-topics" class="anchor" href="#topics" aria-hidden="true"></a>Topics</h2>
 <ol>
+<li class="fragment">Introduction and Basic Concepts</li>
 <li class="fragment">Regex</li>
-<li class="fragment">Part-of-Speech Tagging</li>
-<li class="fragment">N-gram Language Models</li>
+<li class="fragment">Language Models</li>
 <li class="fragment">Sentiment Classification</li>
 <li class="fragment">Vector Semantics &amp; Embeddings</li>
+<li class="fragment">Constituency Grammars</li>
+<li class="fragment">Constituency Parsing</li>
+<li class="fragment">Dependency Parsing</li>
 <li class="fragment">Recurrent Networks</li>
 </ol>
 
@@ -312,9 +309,468 @@
 
 
     
+    <section>
+        <section >
+            <h2><a id="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"></a>Introduction</h2>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-nlp" class="anchor" href="#nlp" aria-hidden="true"></a>NLP</h4>
+<p class="fragment">Natural Language Processing</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-text-processing" class="anchor" href="#text-processing" aria-hidden="true"></a>Text Processing</h4>
+<p class="fragment">All text manipulation techniques and algorithms.</p>
+<p class="fragment">Speech Processing + Text Processing = NLP</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-nlu" class="anchor" href="#nlu" aria-hidden="true"></a>NLU</h4>
+<p class="fragment">Natuaral Language Understanding</p>
+<p><span class='fragment'>A subset of NLP</span><span class='fragment'>, more advanced algorithms,</span> <span class='fragment'> focused on semantics.</span></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-syntax-vs-semantics" class="anchor" href="#syntax-vs-semantics" aria-hidden="true"></a>Syntax vs Semantics</h4>
+<p class="fragment">Grammar vs Meaning</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-nlg" class="anchor" href="#nlg" aria-hidden="true"></a>NLG</h4>
+<p class="fragment">Natural Language Generation</p>
+<p class="fragment">Algorithms used for generating natural language utterances</p>
+
+            </section>
+        
+            <section >
+                <p>Technically</p>
+<p class="fragment">When people say NLP, they mean …</p>
+<p class="fragment">The technically correct terminology is …</p>
+<h3 class="fragment"><a id="user-content-text-understanding" class="anchor" href="#text-understanding" aria-hidden="true"></a>Text Understanding</h3>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-nlp-is-important" class="anchor" href="#nlp-is-important" aria-hidden="true"></a>NLP is important</h2>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-heres-why" class="anchor" href="#heres-why" aria-hidden="true"></a>Here’s Why</h3>
+
+            </section>
+        
+            <section >
+                <p><img src="https://i.imgur.com/DhFbwaX.jpg" alt="Imgur" width="500" height="700"></p>
+
+            </section>
+        
+            <section >
+                <p>Most of <strong>you</strong> work with</p>
+<h4 class="fragment"><a id="user-content-structured-data" class="anchor" href="#structured-data" aria-hidden="true"></a>Structured Data</h4>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-but" class="anchor" href="#but" aria-hidden="true"></a>But</h4>
+<p class="fragment">90% of all data in the world is</p>
+<h3 class="fragment"><a id="user-content-unstructured-data" class="anchor" href="#unstructured-data" aria-hidden="true"></a>Unstructured Data</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-and-most-of-it-is" class="anchor" href="#and-most-of-it-is" aria-hidden="true"></a>And Most of it is</h4>
+<h3 class="fragment"><a id="user-content-text" class="anchor" href="#text" aria-hidden="true"></a>TEXT</h3>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-example" class="anchor" href="#example" aria-hidden="true"></a>Example</h4>
+<p class="fragment">News Feeds</p>
+<p class="fragment">Blogs</p>
+<p class="fragment">Social Media Updates</p>
+<p class="fragment">Tweets</p>
+<p class="fragment">Text Messages</p>
+<p class="fragment">Searches</p>
+<p class="fragment">…</p>
+
+            </section>
+        
+            <section >
+                <p>Important thing about text</p>
+<blockquote class="fragment">
+<p>“Text Data is a mess”</p>
+</blockquote>
+<p class="fragment">– Someone with NLP experience</p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-basic-concepts" class="anchor" href="#basic-concepts" aria-hidden="true"></a>Basic Concepts</h2>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-tokens" class="anchor" href="#tokens" aria-hidden="true"></a>Tokens</h4>
+<p class="fragment">Words, numbers</p>
+<p class="fragment">any singular unit of NLP</p>
+<p class="fragment"><strong>exercise:</strong></p>
+<blockquote class="fragment">
+<p>This sentence was written in 2019. Yo wassup!</p>
+</blockquote>
+<p><span class='fragment'> Tokens =&gt; </span><span class='fragment'>8</span></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-types" class="anchor" href="#types" aria-hidden="true"></a>Types</h4>
+<p class="fragment">Unique Tokens</p>
+<blockquote class="fragment">
+<p>This sentence was written to be written exactly where it is written</p>
+</blockquote>
+<p><span class='fragment'> Tokens =&gt; </span><span class='fragment'>12</span>
+<span class='fragment'> Types =&gt; </span><span class='fragment'>10</span></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-word-sense" class="anchor" href="#word-sense" aria-hidden="true"></a>Word Sense</h4>
+<blockquote class="fragment">
+<p>I have a lot of <strong>interest</strong> in NLP</p>
+</blockquote>
+<blockquote class="fragment">
+<p>I got a loan on 8% <strong>interest</strong></p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-parts-of-speech" class="anchor" href="#parts-of-speech" aria-hidden="true"></a>Parts-of-Speech</h4>
+<p class="fragment"><img src="https://i.imgur.com/XePkaJZ.png?1" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <p><img src="https://i.imgur.com/RoEOuMR.png" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <p><img src="https://i.imgur.com/QCExtuz.png" alt="Imgur" width="800" height="600"></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-lemma" class="anchor" href="#lemma" aria-hidden="true"></a>Lemma</h4>
+<p class="fragment"><strong>Grammatical Root</strong> of a word</p>
+<p class="fragment">with the same <strong>word sense</strong></p>
+<p class="fragment">and the same <strong>part-of-speech</strong></p>
+<p class="fragment"><strong>exercise:</strong></p>
+<blockquote class="fragment">
+<p>Who wrote the writing where it is written</p>
+</blockquote>
+<p><span class='fragment'> Tokens =&gt; </span><span class='fragment'>8</span>
+<span class='fragment'> Types =&gt; </span><span class='fragment'>8</span>
+<span class='fragment'> Lemma =&gt; </span><span class='fragment'>7</span>
+<span class='fragment'> Word Family =&gt; </span><span class='fragment'>6</span></p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<blockquote class="fragment">
+<p>I came I saw I concordanced, I come I see a concordance</p>
+</blockquote>
+<p class="fragment"><img src="https://i.imgur.com/a8yVb6Q.png?1" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-utterance" class="anchor" href="#utterance" aria-hidden="true"></a>Utterance</h4>
+<p class="fragment">A sentence in speech processing.</p>
+<blockquote class="fragment">
+<p>“I do uh main- mainly business data processing”</p>
+</blockquote>
+<p class="fragment"><strong>examples:</strong></p>
+<p class="fragment">transcripted telephone conversations</p>
+<p class="fragment">song lyrics</p>
+<p class="fragment">movie subtitles</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-disfluencies" class="anchor" href="#disfluencies" aria-hidden="true"></a>Disfluencies</h4>
+<p class="fragment">sounds that break the flow</p>
+<ol>
+<li class="fragment">fragments</li>
+<li class="fragment">fillers</li>
+</ol>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-language-issues" class="anchor" href="#language-issues" aria-hidden="true"></a>Language Issues</h3>
+<p class="fragment">Most advanced tools work only for</p>
+<p class="fragment"><strong>English</strong></p>
+<p class="fragment">Next best in line are …</p>
+<p><span class='fragment'>Chinese</span> <span class='fragment'>, Spanish</span><span class='fragment'>, Arabic</span></p>
+<ol>
+<li class="fragment">Non-ASCII characters</li>
+<li class="fragment">latinised words</li>
+<li class="fragment">Vernaculars</li>
+</ol>
+<p class="fragment"><strong>example:</strong></p>
+<p class="fragment">AAVE (African American Vernacular English)</p>
+<p><span class='fragment'>iont =&gt;</span><span class='fragment'>I don’t</span></p>
+<p><span class='fragment'>talmbout =&gt;</span><span class='fragment'>talking about</span></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-code-switching" class="anchor" href="#code-switching" aria-hidden="true"></a>Code switching</h4>
+<blockquote class="fragment">
+<p>“dost tha or rahega… dont worry … but dherya rakhe”</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-corpus" class="anchor" href="#corpus" aria-hidden="true"></a>Corpus</h4>
+<p class="fragment">A computer-readable collection of text or speech</p>
+<p class="fragment">pl: Corpora</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-examples-of-large-corpora" class="anchor" href="#examples-of-large-corpora" aria-hidden="true"></a>Examples of Large Corpora</h4>
+<p class="fragment"><img src="https://i.imgur.com/lIGIefc.png?1" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-stopwords" class="anchor" href="#stopwords" aria-hidden="true"></a>Stopwords</h4>
+<p class="fragment">List of common words like</p>
+<p><span class='fragment'>is, are, i, me, myself, you, he, she,</span> <span class='fragment'>his, her, it, this, that, are, was, be,</span> <span class='fragment'>have, had, at, of, in, because, about, of, on, here, there …</span></p>
+<p class="fragment">~ <strong>Function Words</strong></p>
+<p class="fragment">(articles, pronouns, prepositions)</p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
         <section >
             
+            <h2><a id="user-content-basic-techniques" class="anchor" href="#basic-techniques" aria-hidden="true"></a>Basic Techniques</h2>
+<h4><a id="user-content-preprocessing" class="anchor" href="#preprocessing" aria-hidden="true"></a>(Preprocessing)</h4>
+<ol>
+<li class="fragment">Segmentation</li>
+<li class="fragment">Tokenization</li>
+<li class="fragment">Normalization</li>
+</ol>
+
+            </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h3><a id="user-content-segmentation" class="anchor" href="#segmentation" aria-hidden="true"></a>Segmentation</h3>
+<p class="fragment">Breaking text into sentences.</p>
+
+            </section>
+        
+            <section >
+                <blockquote>
+<p>This is a paragraph. How do you think you will divide this? Put on your thinking hat guys! We are four sentences.</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <blockquote>
+<p>This is also a paragraph. Don’t be a Mr. Potato Head. The movie Monsters Inc. is awesome. This is also four sentences ;-D</p>
+</blockquote>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-tokenization" class="anchor" href="#tokenization" aria-hidden="true"></a>Tokenization</h3>
+<p class="fragment">Breaking up into tokens</p>
+
+            </section>
+        
+            <section >
+                <h3><a id="user-content-normalization" class="anchor" href="#normalization" aria-hidden="true"></a>Normalization</h3>
+<p class="fragment">Bringing all words into a standard format.</p>
+<ol>
+<li class="fragment">Lemmatization</li>
+<li class="fragment">Stemming</li>
+</ol>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-lemmatization" class="anchor" href="#lemmatization" aria-hidden="true"></a>Lemmatization</h4>
+<p class="fragment">Breaking up into Lemmas</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-stemming" class="anchor" href="#stemming" aria-hidden="true"></a>Stemming</h4>
+<p><img src="https://i.imgur.com/5xsvA4n.png" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-case-folding" class="anchor" href="#case-folding" aria-hidden="true"></a>Case Folding</h4>
+<p class="fragment">Convert all to lower case or all to upper case</p>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+    <section>
+        <section >
+            <h2><a id="user-content-minimum-edit-distance" class="anchor" href="#minimum-edit-distance" aria-hidden="true"></a>Minimum Edit Distance</h2>
+<p class="fragment">minimum number of editing operations</p>
+<p class="fragment">(insertion, deletion, substitution)</p>
+<p class="fragment">needed to transform one string into another</p>
+<p class="fragment">Also called <strong>Levenshtein</strong> Distance</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-used-in" class="anchor" href="#used-in" aria-hidden="true"></a>Used in</h4>
+<p class="fragment">Spelling Corrections</p>
+<p class="fragment">Coreference</p>
+
+            </section>
+        
+            <section >
+                <p>example:</p>
+<p class="fragment"><strong>cartesin consulting</strong></p>
+<p class="fragment">EDIT Distance (<strong>cartesian</strong>) = 1</p>
+
+            </section>
+        
+            <section >
+                <p>example:</p>
+<p class="fragment">College President Manmohan</p>
+<p class="fragment">Engineering College President Manmohan</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-operations" class="anchor" href="#operations" aria-hidden="true"></a>OPERATIONS</h4>
+<p class="fragment">I
+D
+S</p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<p class="fragment">MONEY -&gt; MONKEY</p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<p class="fragment">EXCITED -&gt; EXCITE</p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<p class="fragment">MILLION -&gt; BILLLION</p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<p class="fragment">RELEVANT -&gt; ELEPHANT</p>
+
+            </section>
+        
+            <section >
+                <p><strong>exercise:</strong></p>
+<p class="fragment">INTENTION -&gt; EXECUTION</p>
+
+            </section>
+        
+            <section >
+                <p><strong>answer:</strong></p>
+<p class="fragment"><img src="https://i.imgur.com/OK6Yl5v.png" alt="Imgur"></p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-alignment" class="anchor" href="#alignment" aria-hidden="true"></a>Alignment</h4>
+<p>Correspondence between substrings</p>
+
+            </section>
+        
+            <section >
+                <h4><a id="user-content-algorithms-for-med" class="anchor" href="#algorithms-for-med" aria-hidden="true"></a>Algorithms for MED</h4>
+<ul>
+<li>Tree Searching</li>
+<li>Dynamic Programming
+<ul>
+<li>Viterbi Algorithm</li>
+<li>CKY</li>
+</ul>
+</li>
+</ul>
+
+            </section>
+        
+
+    </section>
+    
+
+
+
+    
+        <section >
             
+            <h2><a id="user-content-thank-you" class="anchor" href="#thank-you" aria-hidden="true"></a>Thank you</h2>
+<h4><a id="user-content-link" class="anchor" href="#link" aria-hidden="true"></a>Link</h4>
+<p><a href="https://hamzamohdzubair.github.io/lighthouse/html/lecture_nlp_1#/">https://hamzamohdzubair.github.io/lighthouse/html/lecture_nlp_1#/</a></p>
+
             </section>
     
 
